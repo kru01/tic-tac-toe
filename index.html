@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="contentHolder">
+        <footer>
+            <p>Code by</p>
+            <a target="_blank" href="https://github.com/kru01"><img id="profile" src="images/githubPic.jpg"></a>
+            <a id="profileText" target="_blank" href="https://github.com/kru01">kru01</a>
+        </footer>
+        
+        <div id="options">
+            <form action>
+                <select name="difficulty" id="difficulty">
+                    <option value="Normal">Normal</option>
+                    <option value="Challenging">Challenging</option>
+                    <option value="Impossible">Impossible</option>
+                </select>
+            </form>
+
+            <div id="playerSign">
+                <button id="signX" class="active">X</button>
+                <button id="signO">O</button>
+            </div>
+        </div>
+
+        <div id="gameMode">
+            <button class="vsPlayer">Player</button>
+        </div>
+
+        <main id="gameBoard">
+            <div class="topLeftBorder"></div>
+            <div class="topLeftBorder"></div>
+            <div class="topLeftBorder rightBorder"></div>
+            <div class="topLeftBorder"></div>
+            <div class="topLeftBorder"></div>
+            <div class="topLeftBorder rightBorder"></div>
+            <div class="topLeftBorder bottomBorder"></div>
+            <div class="topLeftBorder bottomBorder"></div>
+            <div class="topLeftBorder bottomBorder rightBorder"></div>
+        </main>
+
+        <div id="postGame">
+            <p>Tic Tac Toe</p>
+            <button>RESTART</button>
+        </div>
+    </div>
+</body>
+
+</html>

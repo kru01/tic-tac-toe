@@ -1,0 +1,281 @@
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    user-select: none; /* disabling the undraggable cursor */
+	/* -webkit-user-drag: none; */
+	/* -webkit-app-region: no-drag; */
+	/* cursor: default; */
+}
+
+:root {
+    --generalBorderRad: 0.325em;
+    --fieldBorder: 3px solid #e09d46;
+}
+
+html {box-sizing: border-box;}
+
+body {
+    background: #f2aa4c;
+    color: white;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+}
+
+body #contentHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+    border: 0px solid transparent;
+    border-radius: var(--generalBorderRad);
+    box-shadow: 4px 8px 4px 0px rgb(0 0 0 / 50%);
+    padding: 30px 0 40px 0;;
+    margin: 60px auto 0 auto;
+    color: white;
+    background: #212121;
+    font-weight: bold;
+
+    position: relative;
+}
+
+/* FOOTER */
+body footer {
+    display: flex;
+    align-items: center;
+    width: 10em;
+    justify-content: space-evenly;
+    margin-top: 2em;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #f2aa4c;
+
+    position: absolute;
+    transform: translate(0px, -60px);
+}
+
+footer #profile {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+footer #profile:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: .4s;
+}
+
+footer #profileText {
+    text-decoration: none;
+    color: #f2aa4c;
+}
+
+footer #profileText:hover {
+    color:  hsl(350deg, 84%, 55%);
+    text-decoration: underline;
+}
+/* END OF FOOTER */
+
+#contentHolder #options {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-around;
+    visibility: hidden;
+}
+
+form #difficulty {
+    outline: none;
+    background: none;
+    color: #f2aa4c;
+    font-size: 17px;
+    border: none;
+    border-bottom: 2px solid;
+}
+
+#options #playerSign {
+    display: flex;
+    width: 20%;
+}
+
+#playerSign button {
+    width: 100%;
+    background: #333233;
+    color: #f2aa4c;
+    box-shadow: 5px 5px 4px 0px rgb(0 0 0 / 50%);
+    border: 0px solid transparent;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0.4em 0;
+    cursor: pointer;
+    transform: translateY(-0.2rem);
+}
+
+#playerSign button:hover,
+#playerSign button.active {
+    background: rgb(170 136 93 / 12%);
+    outline: 1px solid;
+    transform: translateY(0rem);
+}
+
+#playerSign #signX {
+    margin-right: 2px;
+    border-top-left-radius: var(--generalBorderRad);
+    border-bottom-left-radius: var(--generalBorderRad);
+}
+
+#playerSign #signO {
+    border-top-right-radius: var(--generalBorderRad);
+    border-bottom-right-radius: var(--generalBorderRad);    
+}
+
+body #gameMode {
+    width: 20%;
+    margin: 20px 0;
+}
+
+#gameMode button {
+    width: 100%;
+    box-shadow: 5px 5px 4px 0px rgb(0 0 0 / 50%);
+    border: 0px solid transparent;
+    border-radius: var(--generalBorderRad);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0.4em 0;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+#gameMode .vsPlayer {
+    background: #09e070;
+    color: #006700;
+    border-bottom: 3px solid green;
+}
+
+#gameMode .vsPlayer:hover {
+    background: #1d9557;
+    color: #4aff4a;
+    transform: translateY(-0.2rem);
+}
+
+#gameMode .vsAI {
+    background: #ff9494;
+    color: #da0000;
+    border-bottom: 3px solid red;
+}
+
+#gameMode .vsAI:hover {
+    background: #ec2d2d;
+    color: #212121;
+    transform: translateY(-0.2rem);
+}
+
+body main#gameBoard {
+    display: grid;
+    grid-template: repeat(3, 80px) / repeat(3, 80px);
+    background: rgb(51, 50, 51);
+    box-shadow: 5px 5px 4px 0px rgb(0 0 0 / 50%);;
+    padding: 2em;
+    border-radius: var(--generalBorderRad);
+    border: 0px solid transparent;
+}
+
+main#gameBoard div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: rgb(201, 202, 201);
+    cursor: pointer;
+}
+
+main#gameBoard div:hover {
+    background: rgb(165 166 165 / 15%);
+}
+
+main#gameBoard .topLeftBorder {
+    border-top: var(--fieldBorder);
+    border-left: var(--fieldBorder);
+}
+
+main#gameBoard .bottomBorder {
+    border-bottom: var(--fieldBorder);
+}
+
+main#gameBoard .rightBorder {
+    border-right: var(--fieldBorder);
+}
+
+body #postGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#postGame p {
+    font-size: 30px;
+    color: #f2aa4c;
+    padding: 0.4em;
+}
+
+#postGame button {
+    width: 10em;
+    padding: 15px 0;
+    border: 0px solid transparent;
+    border-radius: 0.325em;
+    box-shadow: 4px 8px 4px 0px rgb(0 0 0 / 50%);
+    color: white;
+    background: rgb(51, 50, 51);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+#postGame button:hover {
+    background: #ff9494;
+    color: #212121;
+    transform: translateY(-0.2rem);
+}
+
+#gameMode .vsPlayer:active,
+#gameMode .vsAI:active,
+#postGame button:active {
+    transform: translateY(0rem);
+}
+
+@media(max-width: 900px) {
+    #options #playerSign {
+        width: 25%;
+    }
+
+    body #gameMode {
+        width: 35%;
+    }
+}
+
+@media(max-width: 560px) {
+    body #contentHolder {
+        width: 85%;
+    }
+
+    #contentHolder #options {
+        align-self: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #options #playerSign {
+        width: 100%;
+    }
+
+    body #gameMode {
+        width: 60%;
+    }
+}
+
+@media(max-width: 450px) {
+    body main#gameBoard {
+        grid-template: repeat(3, 70px) / repeat(3, 70px);
+    }
+}
